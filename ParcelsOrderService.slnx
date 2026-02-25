@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ParcelsOrderService.Test/ParcelsOrderService.Test.csproj" />
+  <Project Path="ParcelsOrderService/ParcelsOrderService.csproj" />
+</Solution>
