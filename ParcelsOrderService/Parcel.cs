@@ -9,7 +9,7 @@
         public double Weight { get; set; }
         public string? SizeCategory { get; private set; }
         public double Cost { get; private set; }
-
+        //Assumed if the weight is not provided, it will be 1 kg. This can be changed as per requirements.
         public Parcel(double length, double width, double height, double weight = 1, string name = "Parcel")
         {
             Name = name;
@@ -22,7 +22,7 @@
             CalculateCost();
             ReCalculateCostWithWeight();
         }
-
+        //shoulld have done all the calculation and validation in a seperated class but now I have put it in the Parcel class which makes it tightly coupled.
         public void validateDimensions()
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(Length);
