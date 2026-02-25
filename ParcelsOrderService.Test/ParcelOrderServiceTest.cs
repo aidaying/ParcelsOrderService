@@ -3,7 +3,7 @@
     public class ParcelOrderServiceTest
     {
         [Fact]
-        public void Test1()
+        public void Calc_validTestCase()
         {
             var parcels = new List<Parcel>
             {
