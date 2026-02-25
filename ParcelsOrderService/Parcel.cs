@@ -6,7 +6,7 @@
         public double Length { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
-        public string SizeCategory { get; private set; }
+        public string? SizeCategory { get; private set; }
         public double Cost { get; private set; }
 
         public Parcel(double length, double width, double height, string name = "Parcel")
@@ -22,9 +22,9 @@
 
         public void validateDimensions()
         {
-           ArgumentOutOfRangeException.ThrowIfNegativeOrZero(Length, nameof(Length));
-           ArgumentOutOfRangeException.ThrowIfNegativeOrZero(Width, nameof(Width));
-           ArgumentOutOfRangeException.ThrowIfNegativeOrZero(Height, nameof(Height));
+           ArgumentOutOfRangeException.ThrowIfNegativeOrZero(Length);
+           ArgumentOutOfRangeException.ThrowIfNegativeOrZero(Width);
+           ArgumentOutOfRangeException.ThrowIfNegativeOrZero(Height);
         }
 
         public void CalculateSizeCategory()

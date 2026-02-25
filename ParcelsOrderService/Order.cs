@@ -8,12 +8,20 @@ namespace ParcelsOrderService
     {
        public List<Parcel> Parcels { get; private set; }
         public double TotalCost { get; private set; }
+        public bool IsSpeedy { get; private set; }
 
-        public Order (IEnumerable<Parcel> parcels)
+        public Order (IEnumerable<Parcel> parcels, bool isSpeedy = false)
         {
+            IsSpeedy = isSpeedy;
             Parcels = parcels.ToList();
-            TotalCost = Parcels.Sum(p => p.Cost);
+            TotalCost = CalculateTotalCost();
         }
-       
+
+        public double CalculateTotalCost()
+        {
+            TotalCost = Parcels.Sum(p => p.Cost);
+            if (IsSpeedy) TotalCost *= 2;
+            return TotalCost;
+        }
     }
 }
